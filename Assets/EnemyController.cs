@@ -7,9 +7,11 @@ public class EnemyController : MonoBehaviour
     public int speed = 10;
     public int hunger = 25;
     public int score = 1;
+    public GameObject explode;
     private AudioSource[] audioSources;
     private bool scored = false;
-    private void Start() {
+    private void Start()
+    {
         audioSources = GetComponents<AudioSource>();
     }
     void Update()
@@ -32,6 +34,7 @@ public class EnemyController : MonoBehaviour
                 foreach (var audio in audioSources)
                 {
                     audio.Play();
+                    Instantiate(explode).GetComponent<Transform>().position = transform.position;
                 }
                 scored = true;
             }

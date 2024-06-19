@@ -6,6 +6,7 @@ public class TimeElapsed : MonoBehaviour
     public static TimeElapsed instance;
     private PlayerController player;
     public float timeElapsed;
+    public AudioClip gameFinished;
     private void Awake()
     {
         if (instance == null)
@@ -17,7 +18,6 @@ public class TimeElapsed : MonoBehaviour
     {
         StartCoroutine(TimeElapsing());
         player = PlayerController.instance;
-
     }
     private IEnumerator TimeElapsing()
     {
@@ -28,5 +28,9 @@ public class TimeElapsed : MonoBehaviour
             yield return null;
         }
         player.isGameFinish = true;
+        Camera.main.GetComponent<Animator>().SetBool("isGameFinish", true);
+        Camera.main.GetComponent<AudioSource>().Stop();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(gameFinished);
+        player.transform.position = new Vector3(0, 0, -9.7f);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -29,9 +27,17 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        Strafe();
-        if (TimeElapsed.instance.timeElapsed > 1)
-            Throw();
+        if (!isGameFinish)
+        {
+            Strafe();
+            if (TimeElapsed.instance.timeElapsed > 1)
+                Throw();
+        }
+        else if (playerState != PlayerState.Finish)
+        {
+            animator.SetTrigger("GameEnd");
+        }
+
     }
     private void Strafe()
     {

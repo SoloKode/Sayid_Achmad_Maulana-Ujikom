@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnEnemy()
     {
-        while (TimeElapsed.instance.timeElapsed < 60)
+        while (TimeElapsed.instance.timeElapsed < 60 && !PlayerController.instance.isGameFinish)
         {
             int randomIndex = Random.Range(0, enemy.Length - 1);
             GameObject spawnedEnemy = Instantiate(enemy[randomIndex]);

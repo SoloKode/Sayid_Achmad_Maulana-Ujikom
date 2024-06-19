@@ -130,6 +130,7 @@ MonoBehaviour:
   speed: 10
   hunger: 25
   score: 1
+  explode: {fileID: 5694248324234518973, guid: a2a805508f8165045801a2d55a90f829, type: 3}
 --- !u!95 &5943044938618653751
 Animator:
   serializedVersion: 5
