@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-    PlayerState playerState;
+    public PlayerState playerState;
     public bool isGameFinish = false;
     public float playerSpeed = 15;
     private Vector3 horizontalInput;
