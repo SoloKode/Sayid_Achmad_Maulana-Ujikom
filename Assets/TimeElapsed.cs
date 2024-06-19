@@ -6,10 +6,15 @@ public class TimeElapsed : MonoBehaviour
     public static TimeElapsed instance;
     private PlayerController player;
     public float timeElapsed;
-    void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
+        if (instance != this)
+            Destroy(instance);
+    }
+    void Start()
+    {
         StartCoroutine(TimeElapsing());
         player = PlayerController.instance;
 

@@ -7,6 +7,11 @@ public class EnemyController : MonoBehaviour
     public int speed = 10;
     public int hunger = 25;
     public int score = 1;
+    private AudioSource[] audioSources;
+    private bool scored = false;
+    private void Start() {
+        audioSources = GetComponents<AudioSource>();
+    }
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
@@ -20,6 +25,17 @@ public class EnemyController : MonoBehaviour
     {
         hunger -= value;
         if (hunger <= 0)
-            Destroy(gameObject);
+        {
+            if (!scored)
+            {
+                GameManager.instance.AddScore(score);
+                foreach (var audio in audioSources)
+                {
+                    audio.Play();
+                }
+                scored = true;
+            }
+            Destroy(gameObject, 0.25f);
+        }
     }
 }

@@ -7,7 +7,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemy;
     public Transform spawnPointA;
     public Transform spawnPointB;
-    private float timeElapsed;
     // Update is called once per frame
     private void Start()
     {
@@ -15,11 +14,8 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnEnemy()
     {
-
-        timeElapsed = 0;
-        while (timeElapsed < 60)
+        while (TimeElapsed.instance.timeElapsed < 60)
         {
-            timeElapsed += Time.deltaTime;
             int randomIndex = Random.Range(0, enemy.Length - 1);
             GameObject spawnedEnemy = Instantiate(enemy[randomIndex]);
             float spawnX = Random.Range(spawnPointA.transform.position.x, spawnPointB.transform.position.x);
