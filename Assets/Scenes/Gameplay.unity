@@ -123,25 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &204666142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2469595090066516179, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
-  m_PrefabInstance: {fileID: 7728069228107254983}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &204666145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204666142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420f16499a42ecc49871a2b8c0d4acf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGameFinish: 0
-  playerSpeed: 15
 --- !u!1 &288759995
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +621,11 @@ Transform:
   - {fileID: 2003705802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1896016107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4661921733930955724, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
+  m_PrefabInstance: {fileID: 7728069228107254983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2003705801
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,17 +783,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9218375712098691091, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 3135036714340135419, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
+      propertyPath: food
+      value: 
+      objectReference: {fileID: 4852660383927584869, guid: ceccaf5e8d4eb8f42be49dd0df9e3c3a, type: 3}
+    - target: {fileID: 3135036714340135419, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
+      propertyPath: throwable
+      value: 
+      objectReference: {fileID: 4852660383927584869, guid: ceccaf5e8d4eb8f42be49dd0df9e3c3a, type: 3}
+    - target: {fileID: 3135036714340135419, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
+      propertyPath: foodSpawnPoint
+      value: 
+      objectReference: {fileID: 1896016107}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2469595090066516179, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 204666145}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6cd488e317cf64d898569dcd72da9a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

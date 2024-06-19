@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public PlayerState playerState;
     public bool isGameFinish = false;
     public float playerSpeed = 15;
+    public GameObject food;
+    public GameObject foodSpawnPoint;
     private Vector3 horizontalInput;
     private Animator animator;
     private void Reset()
@@ -27,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Strafe();
+        if (TimeElapsed.instance.timeElapsed > 1)
+            Throw();
     }
     private void Strafe()
     {
@@ -34,5 +39,18 @@ public class PlayerController : MonoBehaviour
         transform.Translate(horizontalInput * Time.deltaTime * playerSpeed);
         animator.SetFloat("Strafe", horizontalInput.x);
     }
-
+    private void Throw()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GameObject throwable = Instantiate(food);
+            throwable.transform.position = foodSpawnPoint.transform.position;
+            throwable.GetComponent<Rigidbody>().AddForce(Vector3.forward * 500);
+            if (playerState != PlayerState.Throw)
+            {
+                playerState = PlayerState.Throw;
+                animator.SetTrigger("Throw");
+            }
+        }
+    }
 }
