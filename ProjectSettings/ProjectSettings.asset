@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Sayid_Achmad_Maulana-Ujikom
+  companyName: Agate
+  productName: Animal Chaos by Sayid Achmad Maulana
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -768,8 +768,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Sayid_Achmad_Maulana-Ujikom
-  metroPackageVersion: 
+  metroPackageName: SayidAchmadMaulana-Ujikom
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -777,7 +777,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Sayid_Achmad_Maulana-Ujikom
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Sayid_Achmad_Maulana-Ujikom
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
